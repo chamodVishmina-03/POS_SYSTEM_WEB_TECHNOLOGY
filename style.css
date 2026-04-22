@@ -3,6 +3,11 @@ body {
 }
 
 
+
+
+
+
+    /*=============================== Login_page=====================*/
 .left-side {
     background: linear-gradient(to right, #5faaff, #5faaff);
     height: 100vh;
@@ -26,7 +31,8 @@ body {
 }
 
 .form {
-    width: 350px;
+    width: 450px;
+    height: 400px;
     background: white;
     padding: 25px;
     border-radius: 10px;
@@ -47,3 +53,7 @@ body {
     font-size: 14px;
     color: blue;
 }
+#errorMsg{
+    color: red;
+}
+
