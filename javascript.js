@@ -41,6 +41,13 @@ $("#customerBtn").click(() => showSection("#customerSection"));
 $("#itemBtn").click(() => showSection("#itemSection"));
 $("#orderBtn").click(() => showSection("#orderSection"));
 
+
+
+
+
+
+//================================================= Customer Management ===========
+
   // =====Customer array
 let customers = [];
 
@@ -50,8 +57,32 @@ function generateCustomerId() {
 }
 
 
+//==== Load Customer table
+function loadCustomers() {
+    $("#customerTable").empty();
 
 
+    customers.forEach((c ,index) => {
+        $("#customerTable").append(`
+            <tr data-index="${index}">
+                <td>${c.id}</td>
+                <td>${c.name}</td>
+                <td>${c.contact}</td>
+                <td>${c.address}</td>
+            </tr>
+        `);
+
+    })
+}
+
+
+//==== reset
+function clearForm() {
+    $("custId").val(generateCustomerId());
+    $("custName").val(" ");
+    $("custContact").val(" ");
+    $("custAddress").val(" ");
+}
 
 
 
