@@ -12,6 +12,7 @@ $("#loginBtn").click(function () {
         $("#loginPage").hide();
         $("#dashboard").show();
 
+
     } else {
 
         $("#errorMsg").text("Invalid Username or Password!");
@@ -25,4 +26,34 @@ $("#logoutBtn").click(function () {
     $("#dashboard").hide();
     $("#loginPage").show();
 });
+
+
+function showSection(id) {
+    $(".section").hide();
+    $(id).show();
+}
+
+
+
+//================ nav dashboard===========
+$("#homeBtn").click(() => showSection("#homeSection"));
+$("#customerBtn").click(() => showSection("#customerSection"));
+$("#itemBtn").click(() => showSection("#itemSection"));
+$("#orderBtn").click(() => showSection("#orderSection"));
+
+  // =====Customer array
+let customers = [];
+
+//==== generate cust ID
+function generateCustomerId() {
+    return "C" + (customers.length + 1).toString().padStart(3, '0');
+}
+
+
+
+
+
+
+
+
 

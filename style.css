@@ -68,8 +68,10 @@ body {
 }
 .navbar a {
     color: white !important;
-    margin-right: 15px;
     cursor: pointer;
+    border : 1px solid black;
+    background: #343a40;
+
 }
 .section {
     display: none;
