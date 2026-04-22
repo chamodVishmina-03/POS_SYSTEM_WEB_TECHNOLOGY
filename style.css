@@ -63,16 +63,41 @@ body {
 #dashboard {
     display: none;
 }
-.navbar {
-    background: #343a40;
+.navbar .nav-link {
+    color: #ddd;
+    font-weight: 500;
+    margin-left: 10px;
+    transition: 0.3s;
+    position: relative;
 }
-.navbar a {
-    color: white !important;
-    cursor: pointer;
-    border : 1px solid black;
-    background: #343a40;
 
+/* Hover effect */
+.navbar .nav-link:hover {
+    color: #ffffff;
 }
+
+/* Underline animation */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #0d6efd;
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Active link */
+.navbar .nav-link.active {
+    color: #fff;
+    font-weight: 600;
+}
+
 .section {
     display: none;
     padding: 20px;
