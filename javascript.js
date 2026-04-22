@@ -56,13 +56,11 @@ function generateCustomerId() {
     return "C" + (customers.length + 1).toString().padStart(3, '0');
 }
 
-
-//==== Load Customer table
+// LOAD TABLE
 function loadCustomers() {
     $("#customerTable").empty();
 
-
-    customers.forEach((c ,index) => {
+    customers.forEach((c, index) => {
         $("#customerTable").append(`
             <tr data-index="${index}">
                 <td>${c.id}</td>
@@ -71,20 +69,44 @@ function loadCustomers() {
                 <td>${c.address}</td>
             </tr>
         `);
-
-    })
+    });
 }
 
-
-//==== reset
+// RESET FORM
 function clearForm() {
-    $("custId").val(generateCustomerId());
-    $("custName").val(" ");
-    $("custContact").val(" ");
-    $("custAddress").val(" ");
+    $("#custId").val(generateCustomerId());
+    $("#custName").val("");
+    $("#custContact").val("");
+    $("#custAddress").val("");
 }
 
+// INITIAL ID
+clearForm();
+
+$("#addCustomer").click(function () {
+
+    let id = $("#custId").val().trim();
+    let name = $("#custName").val().trim();
+    let contact = $("#custContact").val().trim();
+    let address = $("#custAddress").val().trim();
+
+    $("small").text("");
+    $("input").removeClass("is-invalid");
+
+    let isValid = true;
+
+    if (name === "") {
+        $("#nameError").text("Name is required!");
+        $("#custName").addClass("is-invalid");
+        isValid = false;
+    }
 
 
+
+
+    customers.push(customer);
+    loadCustomers();
+    clearForm();
+});
 
 
