@@ -63,5 +63,8 @@ body {
 #dashboard {
     display: none;
 }
+.navbar {
+    background: #343a40;
+}
 
 
