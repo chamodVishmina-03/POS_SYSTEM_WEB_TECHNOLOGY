@@ -71,5 +71,13 @@ body {
     margin-right: 15px;
     cursor: pointer;
 }
+.section {
+    display: none;
+    padding: 20px;
+}
+
+#homeSection {
+    display: block;
+}
 
 
