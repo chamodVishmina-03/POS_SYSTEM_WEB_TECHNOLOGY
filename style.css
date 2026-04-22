@@ -8,8 +8,23 @@ body{
     text-align: center;
     padding-top: 60px;
 }
-.right_side img{
+.left_side img{
     width: 250px;
     margin-top: 40px;
 
+}
+
+.right_side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+}
+.login_form {
+    width: 350px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
