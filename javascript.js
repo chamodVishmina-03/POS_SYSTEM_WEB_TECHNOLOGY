@@ -101,7 +101,15 @@ $("#addCustomer").click(function () {
         isValid = false;
     }
 
-
+    if (contact === "") {
+        $("#contactError").text("Contact is required!");
+        $("#custContact").addClass("is-invalid");
+        isValid = false;
+    } else if (!/^(?:\+94|94|0)(70|71|72|74|75|76|77|78)[0-9]{7}$/.test(contact)) {
+        $("#contactError").text("Invalid Sri Lankan number!");
+        $("#custContact").addClass("is-invalid");
+        isValid = false;
+    }
 
 
     customers.push(customer);
