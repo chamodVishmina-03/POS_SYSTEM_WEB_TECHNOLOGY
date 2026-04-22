@@ -118,6 +118,8 @@ $("#addCustomer").click(function () {
         isValid = false;
     }
 
+    if (!isValid) return;
+
 
 
 
