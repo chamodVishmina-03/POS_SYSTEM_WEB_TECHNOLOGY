@@ -11,6 +11,7 @@ $("#loginBtn").click(function () {
 
         $("#loginPage").hide();
         $("#dashboard").show();
+        clearlogin();
 
 
     } else {
@@ -43,7 +44,10 @@ $("#orderBtn").click(() => showSection("#orderSection"));
 
 
 
-
+function clearlogin() {
+    $("#username").val("");
+    $("#password").val("");
+}
 
 
 //================================================= Customer Management ===========
@@ -129,10 +133,29 @@ $("#addCustomer").click(function () {
     };
 
 
-
     customers.push(customer);
     loadCustomers();
     clearForm();
 });
+
+
+// ==========select table customer
+
+$("#customerTable").on("click","tr",function () {
+    let index = $(this).data("index");
+    let c = customers[index];
+
+    $("#custId").val(c.id);
+    $("#custName").val(c.name);
+    $("#custContact").val(c.contact);
+    $("#custAddress").val(c.address);
+
+    $("#customerTable tr").removeClass("table-primary");
+
+    $(this).addClass("table-primary");
+
+    $("#customerSection").data("selectedIndex", index);
+
+} );
 
 
