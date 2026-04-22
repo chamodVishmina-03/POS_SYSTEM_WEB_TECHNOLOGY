@@ -112,6 +112,17 @@ $("#addCustomer").click(function () {
     }
 
 
+    if (address === "") {
+        $("#addressError").text("Address is required!");
+        $("#custAddress").addClass("is-invalid");
+        isValid = false;
+    }
+
+
+
+
+
+
     customers.push(customer);
     loadCustomers();
     clearForm();
