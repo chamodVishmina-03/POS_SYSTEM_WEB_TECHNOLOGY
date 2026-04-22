@@ -63,6 +63,14 @@ body {
 #dashboard {
     display: none;
 }
+
+#navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #ddbbff, #72a7ff);
+}
+
 .navbar .nav-link {
     color: #ddd;
     font-weight: 500;
@@ -71,12 +79,12 @@ body {
     position: relative;
 }
 
-/* Hover effect */
+/* ========= effect */
 .navbar .nav-link:hover {
     color: #ffffff;
 }
 
-/* Underline animation */
+
 .navbar .nav-link::after {
     content: "";
     position: absolute;
@@ -92,7 +100,6 @@ body {
     width: 100%;
 }
 
-/* Active link */
 .navbar .nav-link.active {
     color: #fff;
     font-weight: 600;
