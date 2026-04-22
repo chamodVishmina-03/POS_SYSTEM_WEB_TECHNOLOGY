@@ -66,5 +66,10 @@ body {
 .navbar {
     background: #343a40;
 }
+.navbar a {
+    color: white !important;
+    margin-right: 15px;
+    cursor: pointer;
+}
 
 
