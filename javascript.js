@@ -121,7 +121,12 @@ $("#addCustomer").click(function () {
     if (!isValid) return;
 
 
-
+    let customer = {
+        id: $("#custId").val(),
+        name,
+        contact,
+        address
+    };
 
 
 
