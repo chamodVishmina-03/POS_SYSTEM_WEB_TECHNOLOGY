@@ -60,16 +60,17 @@ const addCustomer = (id, name, contract, address) => {
 
 
 
-// --------------------------- Update Customer ---------------------------
-const updateCustomer = (id,name,contract,address) => {
-    let obj = customers_db.find(item => item.id == id);
+// =====================  update Customer  =====================
+const updateCustomer = (id, name, contract, address) => {
+    let obj = customers_db.find(item => item.id === id);
 
-    if(obj) {
-        obj.name=name;
-        obj.nic=contract;
-        obj.phone=address;
+    if (obj) {
+
+        obj.setName(name);
+        obj.setContract(contract);
+        obj.setAddress(address);
     }
-}
+};
 
 // --------------------------- Delete Customer ---------------------------
 const deleteCustomer = (id) => {

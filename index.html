@@ -91,7 +91,7 @@
     </nav>
 
 
-    <div id="homeSection" class="section">
+    <div id="#homeSection" class="section">
         <h2>Welcome to Dashboard </h2>
 
 
@@ -99,7 +99,7 @@
 
 
 
-    <div id="itemSection" class="section">
+    <div id="#itemSection" class="section">
         <h2>Item Management</h2>
 
     </div>
@@ -107,7 +107,7 @@
 
 
 
-    <div id="orderSection" class="section">
+    <div id="#orderSection" class="section">
         <h2>Order Management</h2>
 
     </div>
@@ -123,28 +123,29 @@
     <div class="">
         <div class="col">
             <label  class="form-label">ID  :  </label>
-            <input type="text" id="custId" class="form-control" placeholder="Customer ID" readonly>
+            <input type="text" id="custId_input" class="form-control" placeholder="Customer ID" readonly>
         </div>
         <div class="col">
             <label  class="form-label">NAME   : </label>
-            <input type="text" id="custName" class="form-control" placeholder="Name">
+            <input type="text" id="custName_input" class="form-control" placeholder="Name">
         </div>
         <div class="col">
             <label  class="form-label">CONTRACT NO :    </label>
-            <input type="text" id="custContact" class="form-control" placeholder="Contact">
+            <input type="text" id="custContact_input" class="form-control" placeholder="Contact">
         </div>
         <div class="col">
             <label  class="form-label">ADDRESS  :    </label>
-            <input type="text" id="custAddress" class="form-control" placeholder="Address">
+            <input type="text" id="custAddress_input" class="form-control" placeholder="Address">
         </div>
        </div>
 
 
         <div class="btnset">
-        <button class="btn btn-success" id="addCustomer">Add</button>
-        <button class="btn btn-warning" id="updateCustomer">Update</button>
-        <button class="btn btn-danger" id="deleteCustomer">Delete</button>
-        <button class="btn btn-secondary " id="resetBtn">Reset</button>
+            <!-- ===================== FIX BUTTON TYPES ===================== -->
+            <button type="button" class="btn btn-success" id="addCustomer">Add</button>
+            <button type="button" class="btn btn-warning" id="updateCustomer">Update</button>
+            <button type="button" class="btn btn-danger" id="deleteCustomer">Delete</button>
+            <button type="button" class="btn btn-secondary" id="resetBtn">Reset</button>
         </div>
 
     </form>
@@ -159,7 +160,7 @@
             <th>Address</th>
         </tr>
         </thead>
-        <tbody id="customerTable"></tbody>
+        <tbody id="customer_tbody"></tbody>
     </table>
 
 
@@ -173,10 +174,10 @@
 
 
 
-
-<script src="controller/dashbarController.js"></script>
-<script src="javascript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="controller/dashbarController.js"></script>
 <script type="module" src="controller/loginController.js"></script>
+<script type="module" src="controller/customerController.js"></script>
 
 
 
