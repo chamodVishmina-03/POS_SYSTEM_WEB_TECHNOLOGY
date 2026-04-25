@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>POS SYSTEM </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -54,6 +54,8 @@
 
 
 
+
+
 <!-- ================= Dashboard  ================= -->
 
 <div id="dashboard">
@@ -71,6 +73,10 @@
 
                 <li class="nav-item">
                     <a   id="customerBtn" class="nav-link" href="#">Customers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a   id="categoryBtn" class="nav-link" href="#">Category</a>
                 </li>
 
                 <li class="nav-item">
@@ -92,7 +98,7 @@
 
 
     <div id="#homeSection" class="section">
-        <h2>Welcome to Dashboard </h2>
+        <p>Welcome to Dashboard </p>
 
 
     </div>
@@ -114,7 +120,11 @@
 
 </div>
 
+
+
+
 <!-- ================= Customer Section  ================= -->
+
 <div id="customerSection" class="section">
 
     <h2>Customer Management</h2>
@@ -166,6 +176,71 @@
 
 
 </div>
+
+
+
+
+<!-- ================= Customer Section  ================= -->
+
+<div id="categorySection" class="section">
+
+    <h2>Category Management</h2>
+
+    <form id="categoryForm  " class="w-50 m-auto border rounded p-5">
+        <div class="">
+            <div class="col">
+                <label  class="form-label">Category ID  :  </label>
+                <input type="text" id="categoryId_input" class="form-control" placeholder="Category ID" readonly>
+            </div>
+            <div class="col">
+                <label  class="form-label">NAME   : </label>
+                <input type="text" id="category_input" class="form-control" placeholder="Category Name">
+            </div>
+
+        </div>
+
+
+        <div class="btnset">
+            <!-- ===================== FIX BUTTON TYPES ===================== -->
+            <button type="button" class="btn btn-success" id="addCategory">Add</button>
+            <button type="button" class="btn btn-warning" id="updateCategory">Update</button>
+            <button type="button" class="btn btn-danger" id="deleteCategory">Delete</button>
+            <button type="button" class="btn btn-secondary" id="resetBtnCategory">Reset</button>
+        </div>
+
+    </form>
+
+    <!============== TABLE =========================>
+    <table class="table table-bordered mt-3">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+
+        </tr>
+        </thead>
+        <tbody id="category_tbody"></tbody>
+    </table>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
