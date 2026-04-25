@@ -173,7 +173,7 @@ $(document).ready(() => {
         resetForm();
     });
 
-    // ========================= Row Click → Fill Form =========================
+    // ========================= select row =========================
     $("#customer_tbody").on("click", "tr", function () {
         const id = $(this).find("td:eq(0)").text();
         const customer = getCustomerDataById(id);
