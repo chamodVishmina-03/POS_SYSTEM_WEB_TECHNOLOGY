@@ -108,7 +108,7 @@ $(document).ready(() => {
         });
     });
 
-    // ========================= select row =========================
+    // ========================= select =========================
     $("#customer_tbody").on("click", "tr", function () {
         const id = $(this).find("td:eq(0)").text();
         const customer = getCustomerDataById(id);
@@ -120,4 +120,50 @@ $(document).ready(() => {
             $("#custAddress_input").val(customer.getAddress());
         }
     });
+});
+
+
+
+// ========================= delete customer=========================
+$("#deleteCustomer").on("click", () => {
+    const id = $("#custId_input").val().trim();
+
+    if (!id) {
+        Swal.fire({ icon: "warning", title: "Select a customer to delete." });
+        return;
+    }
+
+    const existing = getCustomerDataById(id);
+    if (!existing) {
+        Swal.fire({ icon: "error", title: "Customer not found!" });
+        return;
+    }
+
+    Swal.fire({
+        title: "Are you sure?",
+        text: `Delete customer ${id}?`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "Yes, delete!",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            deleteCustomer(id);
+            loadCustomerTable();
+            resetForm();
+
+            Swal.fire({
+                icon: "success",
+                title: "Deleted!",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+        }
+    });
+});
+
+// ========================= reset btn =========================
+$("#resetBtn").on("click", () => {
+    resetForm();
 });
