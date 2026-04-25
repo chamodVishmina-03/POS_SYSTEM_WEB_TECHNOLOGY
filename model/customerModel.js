@@ -28,6 +28,21 @@ class Customer{
     }
 
 
+    setId(id){
+        this.#id = id;
+    }
+    setName(name){
+        this.#name = name;
+    }
+    setContract(contract){
+        this.#contract=contract;
+    }
+    setAddress(address){
+        this.#address=address;
+    }
+
+
+
 
 
 
