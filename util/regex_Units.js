@@ -1,10 +1,10 @@
 
 
 // ============================ check phone ===========================================
-const phone_regex = new RegExp("^[0]{1}[7]{1}[01245678]{1}[0-9]{7}$");
+const checkphone_regex = new RegExp("^[0]{1}[7]{1}[01245678]{1}[0-9]{7}$");
 
 
-export {phone_regex};
+export {checkphone_regex};
 
 
 
