@@ -6,8 +6,6 @@ import {
     getCustomerDataById
 } from "../model/customerModel.js";
 
-import {checkphone_regex} from "../util/regex_Units.js";
-
 // ========================= Generate Customer ID =========================
 const generateCustomerId = () => {
     const customers = getCustomerdata();
@@ -16,6 +14,10 @@ const generateCustomerId = () => {
     const num = parseInt(lastId.replace("C", "")) + 1;
     return "C" + String(num).padStart(3, "0");
 };
+
+
+
+
 
 // ========================= Load Table =========================
 const loadCustomerTable = () => {
@@ -35,6 +37,11 @@ const loadCustomerTable = () => {
     });
 };
 
+
+
+
+
+
 // ========================= Reset Form =========================
 const resetForm = () => {
     $("#custId_input").val(generateCustomerId());
@@ -43,19 +50,34 @@ const resetForm = () => {
     $("#custAddress_input").val("");
 };
 
+
+
+
+
+
+
 // ========================= On Page Load =========================
 $(document).ready(() => {
     resetForm();
     loadCustomerTable();
 
-    // ========================= Add Customer =========================
+
+
+
+
+    // ========================= save Customer =========================
     $("#addCustomer").on("click", () => {
         const id      = $("#custId_input").val().trim();
         const name    = $("#custName_input").val().trim();
         const contact = $("#custContact_input").val().trim();
         const address = $("#custAddress_input").val().trim();
 
-        if (!name || !checkphone_regex(contact) || !address) {Swal.fire({icon: "warning", title: "Missing Fields", text: "Please fill in all fields before adding.",});
+        if (!name || !contact || !address) {
+            Swal.fire({
+                icon: "warning",
+                title: "Missing Fields",
+                text: "Please fill in all fields before adding.",
+            });
             return;
         }
 
@@ -63,8 +85,15 @@ $(document).ready(() => {
         loadCustomerTable();
         resetForm();
 
-        Swal.fire({icon: "success", title: "Customer Added", showConfirmButton: false, timer: 1500,});
+        Swal.fire({
+            icon: "success",
+            title: "Customer Added",
+            showConfirmButton: false,
+            timer: 1500,
+        });
     });
+
+
 
     // ========================= update Customer =========================
     $("#updateCustomer").on("click", () => {
@@ -100,7 +129,7 @@ $(document).ready(() => {
         });
     });
 
-    // ========================= delete Customer =========================
+    // ========================= Delete Customer =========================
     $("#deleteCustomer").on("click", () => {
         const id = $("#custId_input").val().trim();
 
@@ -139,12 +168,12 @@ $(document).ready(() => {
         });
     });
 
-    // ========================= reset btn =========================
+    // ========================= Reset Button =========================
     $("#resetBtn").on("click", () => {
         resetForm();
     });
 
-    // ========================= select row =========================
+    // ========================= Row Click → Fill Form =========================
     $("#customer_tbody").on("click", "tr", function () {
         const id = $(this).find("td:eq(0)").text();
         const customer = getCustomerDataById(id);
