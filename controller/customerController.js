@@ -40,3 +40,51 @@ const loadCustomerTable = () => {
 
 
 
+//================================== Reset  =================================
+  const resetBtn =() => {
+      $("#custId_input").val(generateCustomerId());
+      $("custName_input").val("");
+      $("custContact_input").val("");
+      $("custAddress_input").val("");
+  };
+
+
+
+
+// ========================= Add Customer =========================
+$("#addCustomer").on("click", () => {
+    const id      = $("#custId_input").val().trim();
+    const name    = $("#custName_input").val().trim();
+    const contact = $("#custContact_input").val().trim();
+    const address = $("#custAddress_input").val().trim();
+
+    if (id === "") {
+        Swal.fire({ icon: "error", title: "Invalid Id!" });
+    } else if (getCustomerDataById(id)) {
+        Swal.fire({ icon: "error", title: "Id already exists!" });
+    } else if (name === "") {
+        Swal.fire({ icon: "error", title: "Invalid Name!" });
+    } else if (!checkphone_regex(contact)) {
+        Swal.fire({icon: "error", title: "Invalid Contract Number!"});
+    }else if(address === "") {
+        Swal.fire({icon: "error", title: "Invalid Address !"});
+    }    else{
+
+        addCustomer(id, name, contact, address);
+        loadCustomerTable();
+        resetForm();
+
+        Swal.fire({icon: "success", title: "Customer Added", showConfirmButton: false, timer: 1500,});
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
