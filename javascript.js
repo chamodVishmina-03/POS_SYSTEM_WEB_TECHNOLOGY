@@ -1,54 +1,61 @@
-//==================Login======================
-$("#loginBtn").click(function () {
+// //==================Login======================
+// $("#loginBtn").click(function () {
+//
+//     let user = $("#username").val();
+//     let pass = $("#password").val();
+//
+//
+//
+//
+//     if (user === "admin" && pass === "1234") {
+//
+//         $("#loginPage").hide();
+//         $("#dashboard").show();
+//         clearlogin();
+//
+//
+//     } else {
+//
+//         $("#errorMsg").text("Invalid Username or Password!");
+//         clearloginerror();
+//     }
+//
+// });
+//
+//
+// //================ Logout===========
+// $("#logoutBtn").click(function () {
+//     $("#dashboard").hide();
+//     $("#loginPage").show();
+// });
+//
+//
+// function showSection(id) {
+//     $(".section").hide();
+//     $(id).show();
+// }
+//
 
-    let user = $("#username").val();
-    let pass = $("#password").val();
+//
+// //================ nav dashboard===========
+// $("#homeBtn").click(() => showSection("#homeSection"));
+// $("#customerBtn").click(() => showSection("#customerSection"));
+// $("#itemBtn").click(() => showSection("#itemSection"));
+// $("#orderBtn").click(() => showSection("#orderSection"));
+//
 
-
-
-
-    if (user === "admin" && pass === "1234") {
-
-        $("#loginPage").hide();
-        $("#dashboard").show();
-        clearlogin();
-
-
-    } else {
-
-        $("#errorMsg").text("Invalid Username or Password!");
-    }
-
-});
-
-
-//================ Logout===========
-$("#logoutBtn").click(function () {
-    $("#dashboard").hide();
-    $("#loginPage").show();
-});
-
-
-function showSection(id) {
-    $(".section").hide();
-    $(id).show();
-}
-
-
-
-//================ nav dashboard===========
-$("#homeBtn").click(() => showSection("#homeSection"));
-$("#customerBtn").click(() => showSection("#customerSection"));
-$("#itemBtn").click(() => showSection("#itemSection"));
-$("#orderBtn").click(() => showSection("#orderSection"));
-
-
-
-function clearlogin() {
-    $("#username").val("");
-    $("#password").val("");
-}
-
+//
+// function clearlogin() {
+//     $("#username").val("");
+//     $("#password").val("");
+//     $("#errorMsg").val("");
+// }
+//
+// function clearloginerror() {
+//
+//     $("#errorMsg").val("");
+// }
+//
 
 //================================================= Customer Management ===========
 
@@ -157,5 +164,6 @@ $("#customerTable").on("click","tr",function () {
     $("#customerSection").data("selectedIndex", index);
 
 } );
+
 
 

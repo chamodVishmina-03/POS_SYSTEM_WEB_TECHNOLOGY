@@ -113,29 +113,43 @@
     </div>
 
 </div>
+
+<!-- ================= Customer Section  ================= -->
 <div id="customerSection" class="section">
 
     <h2>Customer Management</h2>
 
+    <form id="customerForm  " class="w-50 m-auto">
     <div class="row mb-3">
         <div class="col">
+            <label  class="form-label">ID  :  </label>
             <input type="text" id="custId" class="form-control" placeholder="Customer ID" readonly>
         </div>
         <div class="col">
+            <label  class="form-label">NAME   : </label>
             <input type="text" id="custName" class="form-control" placeholder="Name">
         </div>
         <div class="col">
+            <label  class="form-label">CONTRACT NO :    </label>
             <input type="text" id="custContact" class="form-control" placeholder="Contact">
         </div>
         <div class="col">
+            <label  class="form-label">ADDRESS  :    </label>
             <input type="text" id="custAddress" class="form-control" placeholder="Address">
         </div>
-    </div>
+       </div>
 
-    <button class="btn btn-success" id="addCustomer">Add</button>
-    <button class="btn btn-warning" id="updateCustomer">Update</button>
-    <button class="btn btn-danger" id="deleteCustomer">Delete</button>
-    <button class="btn btn-secondary " id="resetBtn">Reset</button>
+
+        <div class="text-end">
+        <button class="btn btn-success" id="addCustomer">Add</button>
+        <button class="btn btn-warning" id="updateCustomer">Update</button>
+        <button class="btn btn-danger" id="deleteCustomer">Delete</button>
+        <button class="btn btn-secondary " id="resetBtn">Reset</button>
+        </div>
+
+    </form>
+
+
 
     <!============== TABLE =========================>
     <table class="table table-bordered mt-3">
@@ -156,5 +170,9 @@
 
 
 <script src="javascript.js"></script>
+<script src="controller/loginController.js"></script>
+<script src="controller/dashbarController.js"></script>
+
+
 </body>
 </html>
