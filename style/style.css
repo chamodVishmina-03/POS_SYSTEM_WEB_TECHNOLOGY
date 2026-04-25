@@ -106,14 +106,36 @@ body {
     font-weight: 600;
 }
 
+
+
+
+
 .section {
     display: none;
     padding: 20px;
 }
 
 #homeSection {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
 }
+
+#homeSection > img {
+    width: 450px;
+    height: 400px;
+    opacity: 90%;
+}
+
+
+
+
+
+
+
 
 
 #customerForm{
