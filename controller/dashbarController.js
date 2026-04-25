@@ -12,3 +12,4 @@ $("#customerBtn").click(() => showSection("#customerSection"));
 $("#itemBtn").click(() => showSection("#itemSection"));
 $("#orderBtn").click(() => showSection("#orderSection"));
 $("#categoryBtn").click(() => showSection("#categorySection"));
+$("#orderHistoryBtn").click(() => showSection("#orderHistorySection"));
