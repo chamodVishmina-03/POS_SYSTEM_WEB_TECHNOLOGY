@@ -101,15 +101,17 @@
     </nav>
 
 
-    <div id="#homeSection" class="section">
-        <p>Welcome to Dashboard </p>
-
+    <div id="homeSection" class="section">
+        <h2>Welcome to dashboard !!!!</h2>
+        <div id="imagedash">
+            <img src="assets/Supermarket.png" alt="img">
+        </div>
 
     </div>
 
 
 
-    <div id="#itemSection" class="section">
+    <div id="itemSection" class="section">
         <h2>Item Management</h2>
 
     </div>
@@ -117,118 +119,122 @@
 
 
 
-    <div id="#orderSection" class="section">
+    <div id="orderSection" class="section">
         <h2>Order Management</h2>
 
     </div>
 
-</div>
 
 
 
+    <!-- ================= Customer Section  ================= -->
 
-<!-- ================= Customer Section  ================= -->
+    <div id="customerSection" class="section">
 
-<div id="customerSection" class="section">
+        <h2>Customer Management</h2>
 
-    <h2>Customer Management</h2>
-
-    <form id="customerForm  " class="w-50 m-auto border rounded p-5">
-    <div class="">
-        <div class="col">
-            <label  class="form-label">ID  :  </label>
-            <input type="text" id="custId_input" class="form-control" placeholder="Customer ID" readonly>
-        </div>
-        <div class="col">
-            <label  class="form-label">NAME   : </label>
-            <input type="text" id="custName_input" class="form-control" placeholder="Name">
-        </div>
-        <div class="col">
-            <label  class="form-label">CONTRACT NO :    </label>
-            <input type="text" id="custContact_input" class="form-control" placeholder="Contact">
-        </div>
-        <div class="col">
-            <label  class="form-label">ADDRESS  :    </label>
-            <input type="text" id="custAddress_input" class="form-control" placeholder="Address">
-        </div>
-       </div>
-
-
-        <div class="btnset">
-            <!-- ===================== FIX BUTTON TYPES ===================== -->
-            <button type="button" class="btn btn-success" id="addCustomer">Add</button>
-            <button type="button" class="btn btn-warning" id="updateCustomer">Update</button>
-            <button type="button" class="btn btn-danger" id="deleteCustomer">Delete</button>
-            <button type="button" class="btn btn-secondary" id="resetBtn">Reset</button>
-        </div>
-
-    </form>
-
-    <!============== TABLE =========================>
-    <table class="table table-bordered mt-3">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Contact</th>
-            <th>Address</th>
-        </tr>
-        </thead>
-        <tbody id="customer_tbody"></tbody>
-    </table>
-
-
-
-</div>
-
-
-
-
-<!-- ================= Customer Section  ================= -->
-
-<div id="categorySection" class="section">
-
-    <h2>Category Management</h2>
-
-    <form id="categoryForm  " class="w-50 m-auto border rounded p-5">
-        <div class="">
-            <div class="col">
-                <label  class="form-label">Category ID  :  </label>
-                <input type="text" id="categoryId_input" class="form-control" placeholder="Category ID" readonly>
-            </div>
-            <div class="col">
-                <label  class="form-label">NAME   : </label>
-                <input type="text" id="category_input" class="form-control" placeholder="Category Name">
+        <form id="customerForm  " class="w-50 m-auto border rounded p-5 ">
+            <div class="">
+                <div class="col">
+                    <label  class="form-label">ID  :  </label>
+                    <input type="text" id="custId_input" class="form-control" placeholder="Customer ID" readonly>
+                </div>
+                <div class="col">
+                    <label  class="form-label">NAME   : </label>
+                    <input type="text" id="custName_input" class="form-control" placeholder="Name">
+                </div>
+                <div class="col">
+                    <label  class="form-label">CONTRACT NO :    </label>
+                    <input type="text" id="custContact_input" class="form-control" placeholder="Contact">
+                </div>
+                <div class="col">
+                    <label  class="form-label">ADDRESS  :    </label>
+                    <input type="text" id="custAddress_input" class="form-control" placeholder="Address">
+                </div>
             </div>
 
-        </div>
+
+            <div class="btnset">
+                <!-- ===================== FIX BUTTON TYPES ===================== -->
+                <button type="button" class="btn btn-success" id="addCustomer">Add</button>
+                <button type="button" class="btn btn-warning" id="updateCustomer">Update</button>
+                <button type="button" class="btn btn-danger" id="deleteCustomer">Delete</button>
+                <button type="button" class="btn btn-secondary" id="resetBtn">Reset</button>
+            </div>
+
+        </form>
+
+        <!============== TABLE =========================>
+        <table class="table table-bordered mt-3">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            <tbody id="customer_tbody"></tbody>
+        </table>
 
 
-        <div class="btnset">
-            <!-- ===================== FIX BUTTON TYPES ===================== -->
-            <button type="button" class="btn btn-success" id="addCategory">Add</button>
-            <button type="button" class="btn btn-warning" id="updateCategory">Update</button>
-            <button type="button" class="btn btn-danger" id="deleteCategory">Delete</button>
-            <button type="button" class="btn btn-secondary" id="resetBtnCategory">Reset</button>
-        </div>
 
-    </form>
+    </div>
 
-    <!============== TABLE =========================>
-    <table class="table table-bordered mt-3">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
 
-        </tr>
-        </thead>
-        <tbody id="category_tbody"></tbody>
-    </table>
 
+
+    <!-- ================= Category Section  ================= -->
+
+    <div id="categorySection" class="section">
+
+        <h2>Category Management</h2>
+
+        <form id="categoryForm  " class="w-50 m-auto border rounded p-5">
+            <div class="">
+                <div class="col">
+                    <label  class="form-label">Category ID  :  </label>
+                    <input type="text" id="categoryId_input" class="form-control" placeholder="Category ID" readonly>
+                </div>
+                <div class="col">
+                    <label  class="form-label">NAME   : </label>
+                    <input type="text" id="category_input" class="form-control" placeholder="Category Name">
+                </div>
+
+            </div>
+
+
+            <div class="btnset">
+                <!-- ===================== FIX BUTTON TYPES ===================== -->
+                <button type="button" class="btn btn-success" id="addCategory">Add</button>
+                <button type="button" class="btn btn-warning" id="updateCategory">Update</button>
+                <button type="button" class="btn btn-danger" id="deleteCategory">Delete</button>
+                <button type="button" class="btn btn-secondary" id="resetBtnCategory">Reset</button>
+            </div>
+
+        </form>
+
+        <!============== TABLE =========================>
+        <table class="table table-bordered mt-3">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+
+            </tr>
+            </thead>
+            <tbody id="category_tbody"></tbody>
+        </table>
+
+
+
+    </div>
 
 
 </div>
+
+
+
 
 
 
