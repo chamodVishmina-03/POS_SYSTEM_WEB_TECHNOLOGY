@@ -108,3 +108,16 @@ $(document).ready(() => {
         });
     });
 
+    // ========================= select row =========================
+    $("#customer_tbody").on("click", "tr", function () {
+        const id = $(this).find("td:eq(0)").text();
+        const customer = getCustomerDataById(id);
+
+        if (customer) {
+            $("#custId_input").val(customer.id);
+            $("#custName_input").val(customer.getName());
+            $("#custContact_input").val(customer.getContract());
+            $("#custAddress_input").val(customer.getAddress());
+        }
+    });
+});
