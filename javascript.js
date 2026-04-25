@@ -59,8 +59,8 @@
 
 //================================================= Customer Management ===========
 
-  // =====Customer array
-let customers = [];
+//   // =====Customer array
+// let customers = [];
 
 //==== generate cust ID
 function generateCustomerId() {
