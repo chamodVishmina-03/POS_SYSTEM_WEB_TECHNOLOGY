@@ -16,5 +16,21 @@ class Item {
         this.#qty = qty;
         this.#category_id = category_id;
     }
+    get id(){
+        return this.#item_id;
+    }
+    get name(){
+        return this.#item_name;
+    }
+    get price(){
+        return this.#unit_price;
+    }
+    get category_id(){
+        return this.#category_id;
+    }
+    get qty(){
+        return this.#qty;
+    }
+
 
 }
