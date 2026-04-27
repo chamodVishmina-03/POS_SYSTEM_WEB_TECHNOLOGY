@@ -6,4 +6,6 @@ let customers_db = [];
 let category_db = [];
 
 
+
+
 export {customers_db, category_db};

@@ -221,6 +221,59 @@
     <div id="itemSection" class="section">
         <h2>Item Management</h2>
 
+
+        <form id="itemrForm  " class="w-50 m-auto border rounded p-5 ">
+            <div class="">
+                <div class="col">
+                    <label  class="form-label">ItemID  :  </label>
+                    <input type="text" id="itemId_input" class="form-control" placeholder="Customer ID" readonly>
+                </div>
+                <div class="col">
+                    <label  class="form-label">Item Name   : </label>
+                    <input type="text" id="itemName_input" class="form-control" placeholder="Name">
+                </div>
+                <div class="col">
+                    <label  class="form-label">Unit Price :    </label>
+                    <input type="text" id="itemContact_input" class="form-control" placeholder="Contact">
+                </div>
+                <div class="col">
+                    <label  class="form-label">QTY   :    </label>
+                    <input type="text" id="itemAddress_input" class="form-control" placeholder="Address">
+                </div>
+                <div class="col">
+
+                    <label  class="form-label">Category ID  :  </label>
+                    <select type="text" id="categoryItemId_input" class="form-control" placeholder="Category ID" > </select>
+                </div>
+
+            </div>
+
+
+
+            <div class="btnset">
+                <!-- ===================== FIX BUTTON TYPES ===================== -->
+                <button type="button" class="btn btn-success" id="addItem">Add</button>
+                <button type="button" class="btn btn-warning" id="updateItem">Update</button>
+                <button type="button" class="btn btn-danger" id="deleteItem">Delete</button>
+                <button type="button" class="btn btn-secondary" id="resetItemBtn">Reset</button>
+            </div>
+
+        </form>
+
+        <!============== TABLE =========================>
+        <table class="table table-bordered mt-3">
+            <thead>
+            <tr>
+                <th>ItemID</th>
+                <th>Item Name</th>
+                <th>Unit Price</th>
+                <th>QTY</th>
+                <th>Category ID</th>
+            </tr>
+            </thead>
+            <tbody id="item_tbody"></tbody>
+        </table>
+
     </div>
 
 
