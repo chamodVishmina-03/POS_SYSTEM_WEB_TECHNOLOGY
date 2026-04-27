@@ -8,7 +8,7 @@ import {
     getCategoryDataById
 } from "../model/categoryModel.js";
 
-// ========================= Generate Category ID =========================
+// =========================generate id =========================
 const generateCategoryId = () => {
     const categories = getCategorydata();
     if (categories.length === 0) return "CAT001";
@@ -18,19 +18,18 @@ const generateCategoryId = () => {
 };
 
 
+// =========================Table load =========================
+const loadCategoryTable = () => {
+    const tbody = $("#category_tbody");
+    tbody.empty();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    const categories = getCategorydata();
+    categories.forEach((c, index) => {
+        const row = `
+            <tr data-index="${index}">
+                <td>${c.id}</td>
+                <td>${c.getName()}</td>
+            </tr>`;
+        tbody.append(row);
+    });
+};
