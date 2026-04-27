@@ -83,7 +83,31 @@ $('#resetItemBtn').on('click', function () {
     $('#categoryItemId_input').val('');
 });
 
+const cleanItemForm = () => {
+    $('#resetItemBtn').click();
+};
 
+
+// ========================= Initialize =========================
+$('#itemId_input').val(generateItemId());
+
+loadCategoryDropdown();
+loadItemTbl();
+
+
+
+
+$('#item_tbody').on('click', 'tr', function () {
+
+    let item_obj = getItemDataByIndex($(this).index());
+
+        $('#itemId_input').val(item_obj.id);
+        $('#itemName_input').val(item_obj.getName());
+        $('#itemContact_input').val(item_obj.getUnitPrice());
+        $('#itemAddress_input').val(item_obj.getQty());
+        $('#categoryItemId_input').val(item_obj.getCategoryId());
+
+});
 
 
 
