@@ -224,3 +224,5 @@ $('#deleteItem').on('click', function () {
 
 
 
+
+export {loadCategoryDropdown};
