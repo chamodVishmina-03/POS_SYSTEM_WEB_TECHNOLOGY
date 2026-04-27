@@ -9,4 +9,4 @@ let category_db = [];
 let items_db = [];
 
 
-export {customers_db, category_db};
+export {customers_db, category_db ,items_db};
