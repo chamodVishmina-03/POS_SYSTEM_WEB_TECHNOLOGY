@@ -52,15 +52,19 @@ class Customer{
 
 
 
-// --------------------------- Add Customer ---------------------------
+//  ===================== Add Customer  =====================
 const addCustomer = (id, name, contract, address) => {
+
     let new_Customer = new Customer(id, name, contract, address);
+
     customers_db.push(new_Customer);
+
+
 }
 
 
 
-// =====================  update Customer  =====================
+// =============================  update Customer  =====================
 const updateCustomer = (id, name, contract, address) => {
     let obj = customers_db.find(item => item.id === id);
 
@@ -72,27 +76,34 @@ const updateCustomer = (id, name, contract, address) => {
     }
 };
 
-// --------------------------- Delete Customer ---------------------------
+//  ===================== Delete customer  =====================
 const deleteCustomer = (id) => {
-    let index = customers_db.findIndex(item => item.id == id); // -1
+
+    let index = customers_db.findIndex(item => item.id == id);
+
 
     if(index!==-1) {
+
         customers_db.splice(index, 1);
+
     }
 }
 
-// --------------------------- Get Student ---------------------------
+//  ===================== get Student  =====================
 const getCustomerdata = () => {
+
     return customers_db;
 }
 
-// --------------------------- Get Student by Index ---------------------------
+//  ===================== Get student  index  =====================
 const getCustomerDataByIndex = (index) => {
+
     return customers_db[index];
 }
 
-// --------------------------- Get Student by Id ---------------------------
+//  ===================== Get student by id  =====================
 const getCustomerDataById = (id) => {
+
     return customers_db.find(item => item.id== id);
 }
 

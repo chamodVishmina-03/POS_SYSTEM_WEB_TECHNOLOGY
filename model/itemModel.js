@@ -50,3 +50,16 @@ class Item {
     }
 
 }
+
+
+//  =====================  Add item  =====================
+const addItem = (item_id, item_name, unit_price, qty, category_id) => {
+
+    let new_item = new Item(item_id, item_name, unit_price, qty, category_id);
+    item_db.push(new_item);
+
+
+};
+
+
+
