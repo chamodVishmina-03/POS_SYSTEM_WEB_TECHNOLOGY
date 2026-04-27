@@ -81,6 +81,10 @@ const updateItem = (item_id, item_name, unit_price, qty, category_id) => {
 
 
 
+
+//  ===================== delete  item  =====================
+
+
 const deleteItem = (item_id) => {
 
     let index = item_db.findIndex(item => item.id == item_id);
@@ -92,3 +96,10 @@ const deleteItem = (item_id) => {
 
 
 };
+
+
+const getItemData = () => {
+
+    return item_db;
+
+}
