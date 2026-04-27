@@ -72,7 +72,7 @@ const getCategoryDataById = (category_id) => {
     return category_db.find(item => item.id== category_id);
 }
 
-export {addCategory, updateCategory, deleteCategory, getCategorydata, getCategoryDataByIndex};
+export {addCategory, updateCategory, deleteCategory, getCategorydata, getCategoryDataByIndex,getCategoryDataById};
 
 
 
