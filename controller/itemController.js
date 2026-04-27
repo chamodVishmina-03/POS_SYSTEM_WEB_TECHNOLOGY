@@ -6,3 +6,7 @@ import {addItem,
     getItemDataById,
 
 } from "../model/itemModel.js";
+
+import {getCategorydata} from "../model/categoryModel.js";
+
+
