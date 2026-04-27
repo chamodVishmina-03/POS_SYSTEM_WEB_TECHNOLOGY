@@ -57,3 +57,12 @@ const resetForm = () => {
     $("#categoryName_input").val("");
 
 };
+
+
+
+
+// ========================= On Page Load =========================
+$(document).ready(() => {
+    resetForm();
+    loadCategoryTable();
+});
