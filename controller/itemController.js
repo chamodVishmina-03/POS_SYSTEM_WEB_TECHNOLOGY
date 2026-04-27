@@ -162,6 +162,8 @@ $('#addItem').on('click', function () {
 
 
 
+// ========================= update item =========================
+
 $('#updateItem').on('click', function () {
 
             let id          = $('#itemId_input').val();
@@ -184,10 +186,38 @@ $('#updateItem').on('click', function () {
     cleanItemForm();
     Swal.fire({ icon: "success", title: "Item updated successfully!" });
     loadItemTbl();
+
 });
 
 
 
+// ========================= delete  item =========================
+
+$('#deleteItem').on('click', function () {
+
+       let id = $('#itemId_input').val();
+
+      Swal.fire({title: "Are you sure?", text: "You won't be able to revert this!",
+          icon: "warning", showCancelButton: true,
+         confirmButtonColor: "#3085d6",
+         cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            (id === "") ? Swal.fire({ icon: "error", title: "Invalid Id!" }) :
+                (!(getItemDataById(id))) ? Swal.fire({ icon: "error", title: "Item not found!" }) :
+                    deleteItem(id);
+        }
+
+
+
+        cleanItemForm();
+        Swal.fire({ icon: "success", title: "Item deleted successfully!" });
+        loadItemTbl();
+
+
+    });
+});
 
 
 
