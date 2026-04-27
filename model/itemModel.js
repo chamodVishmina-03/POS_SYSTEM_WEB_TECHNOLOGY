@@ -62,4 +62,15 @@ const addItem = (item_id, item_name, unit_price, qty, category_id) => {
 };
 
 
+//  ===================== update  item  =====================
+
+const updateItem = (item_id, item_name, unit_price, qty, category_id) => {
+    let obj = item_db.find(item => item.id === item_id);
+    if (obj) {
+        obj.setName(item_name);
+        obj.setUnitPrice(unit_price);
+        obj.setQty(qty);
+        obj.setCategoryId(category_id);
+    }
+};
 
