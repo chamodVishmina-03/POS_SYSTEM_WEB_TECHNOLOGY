@@ -168,6 +168,12 @@ $(document).ready(() => {
     });
 
 
+    // ========================= Reset Button =========================
+    $("#resetBtnCategory").on("click", () => {
+        resetForm();
+    });
+
+
 
 
 });
