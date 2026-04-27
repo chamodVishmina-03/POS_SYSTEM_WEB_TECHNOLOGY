@@ -33,4 +33,20 @@ class Item {
     }
 
 
+    setId(id) {
+        this.#item_id = id;
+    }
+    setName(name) {
+        this.#item_name = name;
+    }
+    setUnitPrice(unit_price) {
+        this.#unit_price = unit_price;
+    }
+    setQty(qty) {
+        this.#qty = qty;
+    }
+    setCategoryId(category_id) {
+        this.#category_id = category_id;
+    }
+
 }
