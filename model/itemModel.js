@@ -1,6 +1,5 @@
 import {item_db} from "../db/db.js";
 
-
 class Item {
     #item_id;
     #item_name;
@@ -8,31 +7,32 @@ class Item {
     #qty;
     #category_id;
 
-    constructor(item_id,item_name,unit_price,qty,category_id) {
-        this.#item_id = item_id;
-        this.#item_name = item_name;
-        this.#unit_price = unit_price;
-        this.#category_id = category_id;
-        this.#qty = qty;
+    constructor(item_id, item_name, unit_price, qty, category_id) {
+        this.#item_id     = item_id;
+        this.#item_name   = item_name;
+        this.#unit_price  = unit_price;
+        this.#qty         = qty;
         this.#category_id = category_id;
     }
-    get id(){
+
+    // ========== Getters ==========
+    get id() {
         return this.#item_id;
     }
-    get name(){
+    getName() {
         return this.#item_name;
     }
-    get price(){
+    getUnitPrice() {
         return this.#unit_price;
     }
-    get category_id(){
-        return this.#category_id;
-    }
-    get qty(){
+    getQty() {
         return this.#qty;
     }
+    getCategoryId() {
+        return this.#category_id;
+    }
 
-
+    // ========== Setters ==========
     setId(id) {
         this.#item_id = id;
     }
@@ -48,84 +48,46 @@ class Item {
     setCategoryId(category_id) {
         this.#category_id = category_id;
     }
-
 }
 
-
-//  =====================  Add item  =====================
+// --------------------------- Add Item ---------------------------
 const addItem = (item_id, item_name, unit_price, qty, category_id) => {
-
     let new_item = new Item(item_id, item_name, unit_price, qty, category_id);
     item_db.push(new_item);
-
-
 };
 
-
-//  ===================== update  item  =====================
-
+// --------------------------- Update Item ---------------------------
 const updateItem = (item_id, item_name, unit_price, qty, category_id) => {
-
     let obj = item_db.find(item => item.id === item_id);
-
     if (obj) {
-
         obj.setName(item_name);
         obj.setUnitPrice(unit_price);
         obj.setQty(qty);
         obj.setCategoryId(category_id);
-
     }
-
 };
 
-
-
-
-//  ===================== delete  item  =====================
-
-
+// --------------------------- Delete Item ---------------------------
 const deleteItem = (item_id) => {
-
     let index = item_db.findIndex(item => item.id == item_id);
-
     if (index !== -1) {
-
         item_db.splice(index, 1);
     }
-
-
 };
 
-
-//  ===================== get data  item  =====================
-
-const getItemData = () => {
-
+// --------------------------- Get All Items ---------------------------
+const getItemdata = () => {
     return item_db;
-
-}
-
-
-
-
-//  ===================== get data  item  =====================
-
-const getItemDataByIndex = (index) => {
-
-    return item_db(index);
-
-}
-
-
-
-//  ===================== get data by id item  =====================
-
-const getItemDataById = (item_id) => {
-
-    return item_db.find(item => item.id == item_id);
-
 };
 
+// --------------------------- Get Item by Index ---------------------------
+const getItemDataByIndex = (index) => {
+    return item_db[index];
+};
 
-export {addItem, updateItem, deleteItem, getItemData, getItemDataByIndex, getItemDataById};
+// --------------------------- Get Item by ID ---------------------------
+const getItemDataById = (item_id) => {
+    return item_db.find(item => item.id == item_id);
+};
+
+export {addItem, updateItem, deleteItem, getItemdata, getItemDataByIndex, getItemDataById};
