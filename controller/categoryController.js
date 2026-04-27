@@ -99,6 +99,31 @@ $(document).ready(() => {
 
 
 
+    // ========================= Update Category =========================
+    $("#updateCategory").on("click", () => {
+
+        const id   = $("#categoryId_input").val().trim();
+        const name = $("#categoryName_input").val().trim();
+
+
+        if (!id || !name) {
+
+            Swal.fire({icon: "warning", title: "Missing Fields", text: "Please select a category and fill all fields.",});
+            return;
+        }
+
+        const existing = getCategoryDataById(id);
+        if (!existing) {
+            Swal.fire({ icon: "error", title: "Category not found!" });
+            return;
+        }
+
+        updateCategory(id, name);
+        loadCategoryTable();
+        resetForm();
+
+        Swal.fire({icon: "success", title: "Category Updated", showConfirmButton: false, timer: 1500,});
+    });
 
 
 
