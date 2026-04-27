@@ -116,3 +116,16 @@ const getItemDataByIndex = (index) => {
     return item_db(index);
 
 }
+
+
+
+//  ===================== get data by id item  =====================
+
+const getItemDataById = (item_id) => {
+
+    return item_db.find(item => item.id == item_id);
+
+};
+
+
+export {addItem, updateItem, deleteItem, getItemData, getItemDataByIndex, getItemDataById};
