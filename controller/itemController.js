@@ -160,3 +160,37 @@ $('#addItem').on('click', function () {
 
 
 
+
+
+$('#updateItem').on('click', function () {
+
+            let id          = $('#itemId_input').val();
+            let name        = $('#itemName_input').val();
+            let unit_price  = $('#itemContact_input').val();
+            let qty         = $('#itemAddress_input').val();
+            let category_id = $('#categoryItemId_input').val();
+
+
+
+    (id === "") ? Swal.fire({ icon: "error", title: "Invalid Id!" }) :
+        (!(getItemDataById(id))) ? Swal.fire({ icon: "error", title: "Item not found!" }) :
+            (name === "") ? Swal.fire({ icon: "error", title: "Invalid Item Name!" }) :
+                (unit_price === "" || isNaN(unit_price)) ? Swal.fire({ icon: "error", title: "Invalid Unit Price!" }) :
+                    (qty === "" || isNaN(qty)) ? Swal.fire({ icon: "error", title: "Invalid QTY!" }) :
+                        (category_id === "") ? Swal.fire({ icon: "error", title: "Please select a Category!" }) :
+                            updateItem(id, name, unit_price, qty, category_id);
+
+
+    cleanItemForm();
+    Swal.fire({ icon: "success", title: "Item updated successfully!" });
+    loadItemTbl();
+});
+
+
+
+
+
+
+
+
+
