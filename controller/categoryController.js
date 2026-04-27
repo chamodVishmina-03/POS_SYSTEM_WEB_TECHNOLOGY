@@ -174,6 +174,16 @@ $(document).ready(() => {
     });
 
 
+    // ========================= select row =========================
+    $("#category_tbody").on("click", "tr", function () {
+        const id = $(this).find("td:eq(0)").text();
+        const category = getCategoryDataById(id);
+
+        if (category) {
+            $("#categoryId_input").val(category.id);
+            $("#categoryName_input").val(category.getName());
+        }
+    });
 
 
 });
