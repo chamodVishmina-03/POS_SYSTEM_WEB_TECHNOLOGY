@@ -96,7 +96,7 @@ loadItemTbl();
 
 
 
-
+// ========================= Select row item =========================
 $('#item_tbody').on('click', 'tr', function () {
 
     let item_obj = getItemDataByIndex($(this).index());
@@ -107,6 +107,55 @@ $('#item_tbody').on('click', 'tr', function () {
         $('#itemAddress_input').val(item_obj.getQty());
         $('#categoryItemId_input').val(item_obj.getCategoryId());
 
+});
+
+
+
+// ========================= Add item =========================
+
+$('#addItem').on('click', function () {
+
+            let id          = $('#itemId_input').val();
+            let name        = $('#itemName_input').val();
+            let unit_price  = $('#itemContact_input').val();
+            let qty         = $('#itemAddress_input').val();
+            let category_id = $('#categoryItemId_input').val();
+
+
+
+            if (id === "") {
+                    Swal.fire({ icon: "error", title: "Invalid Id!" });
+
+            } else if (getItemDataById(id)) {
+
+                 Swal.fire({ icon: "error", title: "Id already exists!" });
+
+            } else if (name === "") {
+
+                 Swal.fire({ icon: "error", title: "Invalid Item Name!" });
+            } else if (unit_price === "" || isNaN(unit_price)) {
+
+                Swal.fire({ icon: "error", title: "Invalid Unit Price!" });
+            } else if (qty === "" || isNaN(qty)) {
+
+                Swal.fire({ icon: "error", title: "Invalid QTY!" });
+            } else if (category_id === "") {
+
+                Swal.fire({ icon: "error", title: "Please select a Category!" });
+
+
+
+            } else {
+
+
+                                  addItem(id, name, unit_price, qty, category_id);
+
+                cleanItemForm();
+
+                Swal.fire({ icon: "success", title: "Item saved successfully!" });
+
+                   loadItemTbl();
+            }
 });
 
 
