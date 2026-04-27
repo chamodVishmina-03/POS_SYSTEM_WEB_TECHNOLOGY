@@ -128,6 +128,44 @@ $(document).ready(() => {
 
 
 
+// ========================= Delete Category =========================
+    $("#deleteCategory").on("click", () => {
+        const id = $("#categoryId_input").val().trim();
+
+        if (!id) {
+            Swal.fire({ icon: "warning", title: "Select a category to delete." });
+            return;
+        }
+
+        const existing = getCategoryDataById(id);
+        if (!existing) {
+            Swal.fire({ icon: "error", title: "Category not found!" });
+            return;
+        }
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: `Delete category ${id}?`,
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                deleteCategory(id);
+                loadCategoryTable();
+                resetForm();
+
+                Swal.fire({
+                    icon: "success",
+                    title: "Deleted!",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            }
+        });
+    });
 
 
 
