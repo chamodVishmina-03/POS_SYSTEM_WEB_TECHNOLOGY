@@ -63,6 +63,48 @@ const resetForm = () => {
 
 // ========================= On Page Load =========================
 $(document).ready(() => {
+
+
     resetForm();
     loadCategoryTable();
+
+
+
+
+    // ========================= Add Category =========================
+    $("#addCategory").on("click", () => {
+        const id   = $("#categoryId_input").val().trim();
+        const name = $("#categoryName_input").val().trim();
+
+        if (!name) {
+            Swal.fire({
+                icon: "warning",
+                title: "Missing Fields",
+                text: "Please enter a category name.",
+            });
+            return;
+        }
+
+        addCategory(id, name);
+        loadCategoryTable();
+        resetForm();
+
+        Swal.fire({
+            icon: "success",
+            title: "Category Added",
+            showConfirmButton: false,
+            timer: 1500,
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
 });
