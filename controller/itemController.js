@@ -69,7 +69,19 @@ const loadItemTbl = () => {
         $('#item_tbody').append(new_row);
     });
 
-}
+};
+
+
+
+// ========================= reset Form =========================
+$('#resetItemBtn').on('click', function () {
+
+    $('#itemId_input').val(generateCustomerId());
+    $('#itemName_input').val('');
+    $('#itemPrice_input').val('');
+    $('#itemQTY_input').val('');
+    $('#categoryItemId_input').val('');
+});
 
 
 
