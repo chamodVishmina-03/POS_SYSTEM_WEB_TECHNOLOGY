@@ -104,3 +104,6 @@ $('#deleteCategory').on('click', function () {
         loadCategoryTbl();
     });
 });
+
+
+

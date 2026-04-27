@@ -6,7 +6,7 @@ let customers_db = [];
 let category_db = [];
 
 // =====item array
-let items_db = [];
+let item_db      = [];
 
 
-export {customers_db, category_db ,items_db};
+export {customers_db, category_db ,item_db};
