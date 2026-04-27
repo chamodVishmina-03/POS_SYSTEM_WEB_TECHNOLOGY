@@ -98,8 +98,21 @@ const deleteItem = (item_id) => {
 };
 
 
+//  ===================== get data  item  =====================
+
 const getItemData = () => {
 
     return item_db;
+
+}
+
+
+
+
+//  ===================== get data  item  =====================
+
+const getItemDataByIndex = (index) => {
+
+    return item_db(index);
 
 }
