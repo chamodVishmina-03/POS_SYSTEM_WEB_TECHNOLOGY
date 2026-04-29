@@ -48,3 +48,11 @@ class Order {
 
 
 }
+
+// ================================= add order ==========================================
+
+ const addOrder = (order_id, customer_id, order_items, total_price) => {
+    let new_order= new Order(order_id, customer_id, order_items, total_price);
+    order_db.push(new_order);
+ }
+
