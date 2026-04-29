@@ -66,3 +66,11 @@ class Order {
 const getOrderById = (order_id) => {
     return order_db.find(item => item.id == order_id);
 }
+
+
+
+
+export {addOrder,getAllOrders,getOrderById};
+
+
+
