@@ -18,4 +18,18 @@ class Order {
         this.#total_price = total_price;
     }
 
+    get order_id() {
+        return this.#order_id;
+    }
+    get customer_id() {
+        return this.#customer_id;
+    }
+    get order_items() {
+        return this.#order_items;
+    }
+    get total_price() {
+        return this.#total_price;
+    }
+
+
 }
