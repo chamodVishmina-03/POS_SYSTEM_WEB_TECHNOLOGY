@@ -32,4 +32,19 @@ class Order {
     }
 
 
+
+    set order_id(order_id) {
+        this.#order_id = order_id;
+    }
+    set customer_id(customer_id) {
+        this.#customer_id = customer_id;
+    }
+    set order_items(order_items) {
+        this.#order_items = order_items;
+    }
+    set total_price(total_price) {
+        this.#total_price = total_price;
+    }
+
+
 }
