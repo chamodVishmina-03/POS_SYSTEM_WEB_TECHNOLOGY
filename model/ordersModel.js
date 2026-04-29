@@ -56,3 +56,10 @@ class Order {
     order_db.push(new_order);
  }
 
+
+// ================================= get all order ==========================================
+ const getAllOrders = () => {
+    return order_db;
+ }
+
+
