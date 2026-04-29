@@ -62,4 +62,7 @@ class Order {
     return order_db;
  }
 
-
+// ================================= get all order by id ==========================================
+const getOrderById = (order_id) => {
+    return order_db.find(item => item.id == order_id);
+}
