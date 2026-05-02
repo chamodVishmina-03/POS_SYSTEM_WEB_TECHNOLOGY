@@ -87,7 +87,7 @@ const loadOrderItemsTbl = () => {
 
 
 
-// ========================= Reset Order Form =========================
+// ========================= reset =========================
 
 const resetOrderForm = () => {
 
@@ -103,6 +103,17 @@ const resetOrderForm = () => {
 };
 
 
+
+
+
+// =========================    init       =========================
+
+
+$('#orderId_input').val(generateOrderId());
+
+loadCustomerDropdown();
+
+loadItemDropdown();
 
 
 
