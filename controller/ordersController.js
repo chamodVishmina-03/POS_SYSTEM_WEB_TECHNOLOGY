@@ -200,3 +200,19 @@ $('#addOrderItemBtn').on('click', function () {
 });
 
 
+
+
+
+// ========================= remove table items table =========================
+
+$('#order_item_tbody').on('click', '.removeItemBtn', function () {
+
+    let index = $(this).data('index');
+    currentOrderItems.splice(index, 1);
+    loadOrderItemsTbl();
+
+
+});
+
+
+
