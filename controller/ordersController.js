@@ -119,5 +119,33 @@ loadItemDropdown();
 
 
 
+// =========================  order item input =========================
+
+$('#orderItemId_input').on('change', function () {
+
+
+    let item_id = $(this).val();
+    if (item_id === "") {
+
+        $('#orderUnitPrice_input').val('');
+        return;
+    }
+
+    let item = getItemDataById(item_id);
+
+    if (item) {
+
+        $('#orderUnitPrice_input').val(item.getUnitPrice());
+
+    }
+
+
+});
+
+
+
+
+
+
 
 
