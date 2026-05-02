@@ -216,3 +216,42 @@ $('#order_item_tbody').on('click', '.removeItemBtn', function () {
 
 
 
+// ========================= placed Order =========================
+
+$('#placeOrderBtn').on('click', function () {
+
+
+
+
+
+    let order_id    = $('#orderId_input').val();
+    let customer_id = $('#orderCustomerId_input').val();
+    let total_price = $('#orderTotal_input').val();
+
+
+
+    if (customer_id === "") {
+        Swal.fire({ icon: "error", title: "Please select a Customer!" });
+        return;
+    }
+    if (currentOrderItems.length === 0) {
+        Swal.fire({ icon: "error", title: "Please add at least one Item!" });
+        return;
+    }
+
+
+    currentOrderItems.forEach(orderItem => {
+        let item = getItemDataById(orderItem.itemId);
+        if (item) {
+            item.setQty(parseInt(item.getQty()) - parseInt(orderItem.qty));
+        }
+    });
+
+    addOrder(order_id, customer_id, [...currentOrderItems], parseFloat(total_price));
+    resetOrderForm();
+
+    Swal.fire({ icon: "success", title: "Order placed successfully!" });
+
+
+
+});
