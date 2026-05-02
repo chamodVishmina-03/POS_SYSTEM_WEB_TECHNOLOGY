@@ -87,6 +87,20 @@ const loadOrderItemsTbl = () => {
 
 
 
+// ========================= Reset Order Form =========================
+
+const resetOrderForm = () => {
+
+        $('#orderId_input').val(generateOrderId());
+        $('#orderCustomerId_input').val('');
+        $('#orderItemId_input').val('');
+        $('#orderUnitPrice_input').val('');
+        $('#orderQty_input').val('');
+        $('#orderTotal_input').val('');
+        currentOrderItems = [];
+        $('#order_item_tbody').empty();
+
+};
 
 
 
