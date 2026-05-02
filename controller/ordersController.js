@@ -46,6 +46,15 @@ export const loadItemDropdown = () => {
 
 
 
+// =========================  Total =========================
+
+const calculateTotal = () => {
+
+    let total = currentOrderItems.reduce((sum, item) => sum + item.subTotal, 0);
+    $('#orderTotal_input').val(total.toFixed(2));
+
+
+};
 
 
 
