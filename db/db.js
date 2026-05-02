@@ -10,4 +10,8 @@ let item_db      = [];
 
 // =====Order array
 let order_db  = [];
-export {customers_db, category_db ,item_db,order_db};
+
+// =====Order Currently array
+let currentOrderItems = [];
+
+export {customers_db, category_db ,item_db,order_db,currentOrderItems};

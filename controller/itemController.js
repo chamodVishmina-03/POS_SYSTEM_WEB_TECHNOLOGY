@@ -57,8 +57,8 @@ const cleanItemForm = () => {
 $('#resetItemBtn').on('click', function () {
     $('#itemId_input').val(generateItemId());
     $('#itemName_input').val('');
-    $('#itemContact_input').val('');
-    $('#itemAddress_input').val('');
+    $('#itemPrice_input').val('');
+    $('#itemQTY_input').val('');
     $('#categoryItemId_input').val('');
 });
 
@@ -73,8 +73,8 @@ $('#item_tbody').on('click', 'tr', function () {
 
     $('#itemId_input').val(item_obj.id);
     $('#itemName_input').val(item_obj.getName());
-    $('#itemContact_input').val(item_obj.getUnitPrice());
-    $('#itemAddress_input').val(item_obj.getQty());
+    $('#itemPrice_input').val(item_obj.getUnitPrice());
+    $('#itemQTY_input').val(item_obj.getQty());
     $('#categoryItemId_input').val(item_obj.getCategoryId());
 });
 
@@ -82,8 +82,8 @@ $('#item_tbody').on('click', 'tr', function () {
 $('#addItem').on('click', function () {
     let id          = $('#itemId_input').val();
     let name        = $('#itemName_input').val();
-    let unit_price  = $('#itemContact_input').val();
-    let qty         = $('#itemAddress_input').val();
+    let unit_price  = $('#itemPrice_input').val();
+    let qty         = $('#itemQTY_input').val();
     let category_id = $('#categoryItemId_input').val();
 
     if (id === "") {
@@ -92,9 +92,9 @@ $('#addItem').on('click', function () {
         Swal.fire({ icon: "error", title: "Id already exists!" });
     } else if (name === "") {
         Swal.fire({ icon: "error", title: "Invalid Item Name!" });
-    } else if (unit_price === "" || isNaN(unit_price)) {
+    } else if (unit_price === ""||isNaN(Number(unit_price))) {
         Swal.fire({ icon: "error", title: "Invalid Unit Price!" });
-    } else if (qty === "" || isNaN(qty)) {
+    } else if (qty === "" ||isNaN (Number(qty))) {
         Swal.fire({ icon: "error", title: "Invalid QTY!" });
     } else if (category_id === "") {
         Swal.fire({ icon: "error", title: "Please select a Category!" });
@@ -110,15 +110,15 @@ $('#addItem').on('click', function () {
 $('#updateItem').on('click', function () {
     let id          = $('#itemId_input').val();
     let name        = $('#itemName_input').val();
-    let unit_price  = $('#itemContact_input').val();
-    let qty         = $('#itemAddress_input').val();
+    let unit_price  = $('#itemPrice_input').val();
+    let qty         = $('#itemQTY_input').val();
     let category_id = $('#categoryItemId_input').val();
 
     (id === "") ? Swal.fire({ icon: "error", title: "Invalid Id!" }) :
         (!(getItemDataById(id))) ? Swal.fire({ icon: "error", title: "Item not found!" }) :
             (name === "") ? Swal.fire({ icon: "error", title: "Invalid Item Name!" }) :
-                (unit_price === "" || isNaN(unit_price)) ? Swal.fire({ icon: "error", title: "Invalid Unit Price!" }) :
-                    (qty === "" || isNaN(qty)) ? Swal.fire({ icon: "error", title: "Invalid QTY!" }) :
+                (unit_price === " " ||isNaN(Number(unit_price))) ? Swal.fire({ icon: "error", title: "Invalid Unit Price!" }) :
+                    (qty === "" ||isNaN(Number(qty))) ? Swal.fire({ icon: "error", title: "Invalid QTY!" }) :
                         (category_id === "") ? Swal.fire({ icon: "error", title: "Please select a Category!" }) :
                             updateItem(id, name, unit_price, qty, category_id);
 
@@ -153,4 +153,4 @@ $('#deleteItem').on('click', function () {
 });
 
 
-export {loadCategoryDropdown};
+export {loadCategoryDropdown ,loadItemTbl};
