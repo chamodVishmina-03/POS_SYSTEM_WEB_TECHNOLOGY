@@ -147,5 +147,56 @@ $('#orderItemId_input').on('change', function () {
 
 
 
+// ========================= add items to order table  =========================
+
+$('#addOrderItemBtn').on('click', function () {
+
+
+    let item_id    = $('#orderItemId_input').val();
+    let unit_price = parseFloat($('#orderUnitPrice_input').val());
+    let qty        = parseInt($('#orderQty_input').val());
+
+    if (item_id === "") {
+        Swal.fire({ icon: "error", title: "Please select an Item!" });
+        return;
+    }
+    if (!qty || qty <= 0) {
+        Swal.fire({ icon: "error", title: "Invalid QTY!" });
+        return;
+    }
+
+    let item = getItemDataById(item_id);
+
+
+    if (qty > parseInt(item.getQty())) {
+        Swal.fire({ icon: "error", title: "Insufficient Stock!", text: `Available QTY: ${item.getQty()}` });
+        return;
+    }
+
+
+
+    let existing = currentOrderItems.find(i => i.itemId === item_id);
+    if (existing) {
+        Swal.fire({ icon: "warning", title: "Item already added!", text: "Remove it first to change QTY." });
+        return;
+    }
+
+    let subTotal = unit_price * qty;
+
+    currentOrderItems.push({
+        itemId:    item.id,
+        itemName:  item.getName(),
+        unitPrice: unit_price,
+        qty:       qty,
+        subTotal:  subTotal
+    });
+
+    loadOrderItemsTbl();
+
+    $('#orderItemId_input').val('');
+    $('#orderUnitPrice_input').val('');
+    $('#orderQty_input').val('');
+
+});
 
 
