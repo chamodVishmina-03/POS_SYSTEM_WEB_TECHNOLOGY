@@ -255,3 +255,13 @@ $('#placeOrderBtn').on('click', function () {
 
 
 });
+
+
+
+// =========================   reset   =========================
+$('#resetOrderBtn').on('click', function () {
+
+    resetOrderForm();
+
+});
+
