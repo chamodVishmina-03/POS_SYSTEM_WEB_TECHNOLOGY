@@ -58,6 +58,37 @@ const calculateTotal = () => {
 
 
 
+// ========================= loading item table =========================
+
+
+const loadOrderItemsTbl = () => {
+
+    $('#order_item_tbody').empty();
+
+    currentOrderItems.map((item, index) => {
+
+        let new_row = `<tr data-index="${index}">
+                            <td>${item.itemId}</td>
+                            <td>${item.itemName}</td>
+                            <td>${item.unitPrice}</td>
+                            <td>${item.qty}</td>
+                            <td>${item.subTotal.toFixed(2)}</td>
+                            <td><button class="btn btn-danger btn-sm removeItemBtn" data-index="${index}">Remove</button></td>
+                       </tr>`;
+
+        $('#order_item_tbody').append(new_row);
+
+    });
+
+    calculateTotal();
+
+
+};
+
+
+
+
+
 
 
 
