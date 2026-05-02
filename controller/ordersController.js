@@ -12,3 +12,19 @@ const generateOrderId = () => {
     const num = parseInt(lastId.replace("ORD", "")) + 1;
     return "ORD" + String(num).padStart(3, "0");
 };
+
+
+
+
+// =========================      load customer dropdown item     =========================
+export const loadCustomerDropdown = () => {
+
+    $('#orderCustomerId_input').empty();
+    $('#orderCustomerId_input').append('<option value="">-- Select Customer --</option>');
+
+    getCustomerdata().map(cust => {
+
+        $('#orderCustomerId_input').append(`<option value="${cust.id}">${cust.id} - ${cust.getName()}</option>`);
+    });
+
+};
