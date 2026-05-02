@@ -28,3 +28,31 @@ export const loadCustomerDropdown = () => {
     });
 
 };
+
+
+
+
+// =========================   load item dropdown   =========================
+export const loadItemDropdown = () => {
+
+    $('#orderItemId_input').empty();
+    $('#orderItemId_input').append('<option value="">-- Select Item --</option>');
+
+    getItemdata().map(item => {
+
+        $('#orderItemId_input').append(`<option value="${item.id}">${item.id} - ${item.getName()}</option>`);
+    });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
